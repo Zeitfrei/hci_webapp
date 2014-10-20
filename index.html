@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title> GAME SOLVER </title>
+  <link rel="stylesheet" href="jquery/jquery.mobile-1.3.2.min.css">
+  <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="main_page" data-theme="b">
+	<div data-role="content">
+		<hr>
+		<a href="#ask_question_1" data-role="button" data-icon="alert" data-iconpos="top">Ask a Question</a>
+		<hr>
+		<br>
+		<hr>
+		<a href="#browse_games_questions" data-role="button" data-icon="search" data-iconpos="top">Browse Questions</a>
+		<a href="#submit_solution_1" data-role="button" data-icon="check" data-iconpos="top">Submit a Solution</a>
+		<hr>
+		<br>
+		<hr>
+		<a href="#account_home" data-role="button" data-icon="star" data-iconpos="top">Account</a>
+		<hr>
+	</div>
+</div>
+
+<div data-role="page" id="account_home" data-theme="b">
+	<div data-role="header" data-theme="b">
+		<center><p> GamerGirly12 </p></center>
+	</div>
+	<div data-role="content" data-theme="b">
+		<hr>
+		<center><p> Total points : 1337 </p></center>
+		<hr>
+		<a href="#" data-role="button" data-icon="alert" data-iconpos="top">My Questions</a>
+		<hr>
+		<a href="#" data-role="button" data-icon="star" data-iconpos="top">My Solutions</a>
+		<hr>
+		<br>
+		<a href="#" data-role="button">Logout</a>
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="controlgroup" data-type="horizontal" align="center" >
+		<a href="#main_page" data-role="button" data-icon="home">Home</a>
+		</div>
+	</div>
+</div>
+
+<div data-role="page" id="ask_question_1">
+	<div data-role="header" data-theme="b"> 
+		<h1> Choose Title </h1>
+	</div>	
+
+	<div data-role="content">
+		<form method="post" action="demoform.asp">
+		<div data-role="fieldcontain">
+
+		<div data-role="header" data-theme="c" align="center">Game</div>
+		<br>
+
+		<ul name="dropdown" id="dropdown" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="Enter Game">
+				<li class="ui-screen-hidden" id="li_dropdown"><a>Half Life</a></li>
+				<li class="ui-screen-hidden" id="li_dropdown"><a>Mario Bros</a></li>
+				<li class="ui-screen-hidden" id="li_dropdown"><a>Monkey Island 3</a></li>
+				<li class="ui-screen-hidden" id="li_dropdown"><a>Super Mario World</a></li>
+				<li class="ui-screen-hidden" id="li_dropdown"><a>Super Metroid</a></li>
+				<li class="ui-screen-hidden" id="li_dropdown"><a>Tomb Raider</a></li>
+				<li class="ui-screen-hidden" id="li_dropdown"><a>Zelda, A Link To The Past</a></li>
+		</ul>
+
+		  <div data-role="header" data-theme="c" align="center">Level</div>
+		  <input type="text" name="level" id="field_askq_level" placeholder="(optional)">
+
+ 		  <div data-role="header" data-theme="c" align="center">Patch</div>
+		  <input type="text" name="patch" id="field_askq_patch" placeholder="(optional)">
+		 </div>
+		</form>		
+	</div>
+
+
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="controlgroup" data-type="horizontal" align="center" >
+		<a href="#main_page" data-role="button" data-icon="home">Home</a>
+		<a href="#check_solutions" data-role="button" id="button_askquestion_ok" data-icon="check">OK</a>
+	 	</div>
+	</div>
+</div>
+
+<div data-role="page" id="ask_question_2" data-theme="b">
+	<div data-role="header" data-theme="b">
+		<h1> Browse </h1>
+	</div>
+
+	<div data-role="content">
+		<form method="post" action="demoform.asp">
+		 <div data-role="fieldcontain">
+		<div data-role="header" data-theme="c" align="center">Title</div>
+		  <input type="text" name="patch" id="field_askq_title" placeholder="(optional)">
+		  <div data-role="header" data-theme="c" align="center">Description</div>
+		  <textarea name="description" id="description" placeholder="Describe your problem here"></textarea>
+		 </div>
+		</form>
+
+		<button id="button_add_picture">Add picture</button>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="controlgroup" data-type="horizontal" align="center" >
+		<a href="#main_page" data-role="button" data-icon="home">Home</a>
+		<a href="#" data-role="button" data-rel="back" data-icon="back">Back</a>
+		<a href="#submit_success" data-role="button" data-rel="dialog" data-icon="check">Submit</a>
+	 	</div>
+	</div>
+		
+</div>
+
+<div data-role="page" id="submit_solution_1">
+	<div data-role="header" data-theme="b">
+		<h1> Post a solution </h1>
+	</div>	
+
+	<div data-role="content">
+		<form method="post" action="demoform.asp">
+		<div data-role="fieldcontain">
+
+		<div data-role="header" data-theme="c" align="center">Game</div>
+		<br>
+
+		<ul name="dropdown" id="sub_dropdown" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="Enter Game">
+				<li class="ui-screen-hidden" id="li_dropdown"><a>Half Life</a></li>
+				<li class="ui-screen-hidden" id="li_dropdown"><a>Mario Bros</a></li>
+				<li class="ui-screen-hidden" id="li_dropdown"><a>Monkey Island 3</a></li>
+				<li class="ui-screen-hidden" id="li_dropdown"><a>Super Mario World</a></li>
+				<li class="ui-screen-hidden" id="li_dropdown"><a>Super Metroid</a></li>
+				<li class="ui-screen-hidden" id="li_dropdown"><a>Tomb Raider</a></li>
+				<li class="ui-screen-hidden" id="li_dropdown"><a>Zelda, A Link To The Past</a></li>
+		</ul>
+
+		  <div data-role="header" data-theme="c" align="center">Level</div>
+		  <input type="text" name="level" id="sub_level" placeholder="(optional)">
+
+ 		  <div data-role="header" data-theme="c" align="center">Patch</div>
+		  <input type="text" name="patch" id="sub_patch" placeholder="(optional)">
+
+		  <div data-role="header" data-theme="c" align="center">Title</div>
+		  <input type="text" name="title" id="sub_title">
+
+		  <div data-role="header" data-theme="c" align="center">Solution</div>
+		  <textarea name="solution" id="sub_solution" placeholder="Post your solution here"></textarea>
+
+		  <button id="button_add_picture">Add picture</button>
+		 </div>
+		</form>		
+	</div>
+	
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="controlgroup" data-type="horizontal" align="center" >
+		<a href="#main_page" data-role="button" data-icon="home">Home</a>
+		<a href="#submit_success" data-role="button" id="button_ok_solution" data-icon="check" data-rel="dialog">OK</a>
+	 	</div>
+	</div>
+</div>
+
+<div data-role="page" id="super mario world">
+	<div data-role="header" data-theme="b">
+		<h2> Super Mario World </h2>
+	</div>
+
+	<div data-role="content">
+		<ul data-role="listview">
+		<li><a href="#link_to_good_solution">Good solution<span class="ui-li-count">1337</span></a></li>
+		<li><a href="#">New solution<span class="ui-li-count">2</span></a></li>
+		<li><a href="#">Troll post<span class="ui-li-count">-42</span></a></li>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="controlgroup" data-type="horizontal" align="center" >
+		<p> Have you found a solution? </p>
+		 <div data-role="controlgroup" data-type="horizontal">
+		<a href="#ask_question_2" data-role="button" data-icon="delete">No</a>
+		<a href="#" data-role="button" data-rel="back" data-icon="back">Back</a>
+		<a href="#main_page" data-role="button" data-icon="home">Yes</a>
+		 </div>
+		</div>
+	</div>
+</div>
+
+<div data-role="page" id="browse_questions">
+	<div data-role="header" data-theme="b">
+		<div data-role="controlgroup" data-type="vertical">
+		<center><p> Choose Question </p></center>
+		</div>
+	</div>
+
+	<div data-role="content">
+		<ul data-role="listview" >
+		 <li><a href="#q_1">How do get to Forest of Illusion 5?</a></li>
+		 <li><a href="#q_2">Help with flying?</a></li>
+		</ul>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="controlgroup" data-type="horizontal" align="center" >
+			<a href="#main_page" data-role="button" data-icon="home">Home</a>
+		</div>
+	</div>
+</div>
+
+<div data-role="page" id="q_1" data-theme="b">
+	<div data-role="header" data-theme="b">
+		<h2> How do get to Forest of Illusion 5? </h2>
+	</div>
+	<div data-role="content" align="center">
+		<img src="img/test2.jpg" alt="No Picture/Video" width="130" height="130">
+		<br>
+		<br>
+		<hr>
+		<label>
+I beat Forest of Illusion 4 and it took me back to Forest of Illusion 2..what do i do to get to the next level? somebody please help...thanks...
+		</label>
+		<hr>
+		<br>
+		<a href="#submit_solution_1" data-role="button" data-icon="check" data-iconpos="top">Submit a Solution</a>
+	</div>
+
+
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="controlgroup" data-type="horizontal" align="center" >
+			<a href="#browse_questions" data-role="button" data-rel="back" data-icon="back">Back</a>
+			<a href="#main_page" data-role="button" data-icon="home">Home</a>
+		</div>
+	</div>
+</div>
+
+<div data-role="page" id="q_2" data-theme="b">
+	<div data-role="header" data-theme="b">
+		<h2> Help with flying? </h2>
+	</div>
+	<div data-role="content" align="center">
+		<img src="images/nopic.jpeg" alt="No Picture/Video" width="130" height="130">
+		<br>
+		<br>
+		<hr>
+		<label>
+Yo!
+
+i Need Help With the Flying Ability What i Mean is How do i and How do i Use the Ballon Type/Cape Power?
+		</label>
+		<hr>
+		<br>
+		<a href="#submit_solution_1" data-role="button" data-icon="check" data-iconpos="top">Submit a Solution</a>
+	</div>
+
+
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="controlgroup" data-type="horizontal" align="center" >
+			<a href="#browse_questions" data-role="button" data-rel="back" data-icon="back">Back</a>
+			<a href="#main_page" data-role="button" data-icon="home">Home</a>
+		</div>
+	</div>
+</div>
+
+
+<div data-role="page" id="browse_games_questions">
+	<div data-role="header" data-theme="b">
+		<div data-role="controlgroup" data-type="vertical">
+		<center><p> Choose Game </p></center>
+		</div>
+	</div>
+	<div data-role="content">
+		<ul data-role="listview" id="#list_games" data-autodividers="true">
+		 <li><a href="#half life">Half Life</a></li>
+		 <li><a href="#">Mario Bros</a></li>
+		 <li><a href="#">Monkey Island 3</a></li>
+		 <li><a href="#browse_questions">Super Mario World</a></li>
+		 <li><a href="#">Super Metroid</a></li>
+		 <li><a href="#">Tomb Raider</a></li>
+		 <li><a href="#">Zelda, A Link To The Past</a></li>
+		</ul>
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="controlgroup" data-type="horizontal" align="center" >
+			<a href="#main_page" data-role="button" data-icon="home">Home</a>
+		</div>
+	</div>
+</div>
+
+<div data-role="page" id="link_to_good_solution" data-theme="b">
+	<div data-role="header" data-theme="b">
+		<h2> Good solution </h2>
+	</div>
+	<div data-role="content" align="center">
+		<center><p style="color:green"> Points : 1337 </p></center>
+		<img src="img/test.jpg" alt="No Picture/Video" width="200" height="200">
+		<br>
+		<br>
+		<hr>
+		<label>
+			fly under the finish line
+		</label>
+		<hr>
+		<br>
+		<center><p> Was this helpful? </p></center>
+		<div data-role="controlgroup" data-type="horizontal" align="center" >
+			<button data-icon="arrow-d">No</button><button data-icon="arrow-u">Yes</button>
+		</div> 
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="controlgroup" data-type="horizontal" align="center" >
+			<a href="#" data-role="button" data-rel="back" data-icon="back">Back</a>
+			<a href="#main_page" data-role="button" data-icon="home">Home</a>
+		</div>
+	</div>
+</div>
+
+<div data-role="page" id="submit_success" data-theme="b">
+	<div data-role="content">
+	<center><p> Submission successful ! </p>
+		<a href="#main_page" data-role="button" data-icon="home">Home</a>
+	</center>
+	
+	</div>
+</div>
+
+<div data-role="page" id="error_pop" data-theme="b">
+	<div data-role="content">
+	<center><p> Oops! Please fill out all non-optional forms </p></center>
+	<a href="#" data-role="button" data-rel="back" data-icon="back">Back</a>
+	</div>
+</div>
+<script type="text/javascript">
+
+$("#sub_solution").height(120);
+$("#description").height(120);
+$("#description_2").height(120);
+$("#sub_level").width(360);
+
+// solution page script
+$("#button_ok_solution").click(function() {
+
+	// #sub_game not working atm
+
+	if($("#sub_title").val() == "") {
+		$("#button_ok_solution").attr("href", "#error_pop");
+		$("#button_ok_solution").attr("data-rel", "dialog");
+	}
+	else if($("#sub_title").val() == "") {
+		$("#button_ok_solution").attr("href", "#error_pop");
+		$("#button_ok_solution").attr("data-rel", "dialog");
+	}
+	else if($("#sub_solution").val() == "") {
+		$("#button_ok_solution").attr("href", "#error_pop");
+		$("#button_ok_solution").attr("data-rel", "dialog");
+	}
+	else {
+		$("#button_ok_solution").attr("href", "#submit_success");
+		$("#button_ok_solution").attr("data-rel", "dialog");
+	}
+});
+
+// question page script
+$("#button_askquestion_ok").click(function() { 
+	if (true) {
+		var ask_q_gametitle = $("#field_askq_game").val();
+		console.log(ask_q_gametitle);
+		/*$("#button_askquestion_ok").attr("href", "#"+ask_q_gametitle.toLowerCase());*/
+		$("#button_askquestion_ok").attr("href", "#super mario world");
+		$("#button_askquestion_ok").attr("data-rel", "");
+		$("h2").text(ask_q_gametitle);
+	} else {
+		$("#button_askquestion_ok").attr("href", "#error_pop");
+		$("#button_askquestion_ok").attr("data-rel", "dialog");
+	}
+		
+});
+
+
+	$("input[data-type='search']").keyup(function () {
+	   if ($(this).val() === '') {
+	       $(this).closest('form').next("[data-role=listview]").children().addClass('ui-screen-hidden');
+	   }
+	});
+
+	$('a.ui-input-clear').click(function () {
+	   $(this).closest('input').val('');
+	   $(this).closest('input').trigger('keyup');
+	});
+
+	$("li").click(function (event) {
+	   var text = $(this).find('.ui-link-inherit').text();
+	   $(this).closest('[data-role=listview]').prev('form').find('input').val(text);
+	   var contentPanelId = jQuery(this).attr("id");
+	   if(contentPanelId == "li_dropdown"){
+	   	$(this).closest('[data-role=listview]').children().addClass('ui-screen-hidden');
+	   }
+	});
+
+
+
+</script>
+
+</body>
+</html>
